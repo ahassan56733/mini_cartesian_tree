@@ -1,6 +1,6 @@
 [project]
 name = "mini-cartesian-tree"
-version = "0.1.0"
+version = "0.1.1"
 description = "Min-heap Cartesian tree over an array, with nodes carrying source indices."
 requires-python = ">=3.10"
 dependencies = []
