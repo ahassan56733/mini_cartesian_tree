@@ -32,3 +32,10 @@ Two choices are fixed so the output is deterministic:
 - A single element yields a root with no children.
 - Sorted ascending input produces a left-leaning chain; sorted descending produces a right-leaning chain. The traversals are iterative, so deep chains do not hit Python's recursion limit.
 - Values must be mutually comparable with each other; the library does not catch `TypeError` for you.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
